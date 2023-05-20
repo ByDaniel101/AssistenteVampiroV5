@@ -15,14 +15,18 @@ public class Usuario implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
-	@Column
+	@Column(name = "nome_usuario")
 	private String nome;
 	
 	@Column
 	private String senha;
 	
+	@Column
+	private String email;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name  = "id_usuario")
 	private int id;
 	
 	public Usuario() {}
@@ -41,6 +45,14 @@ public class Usuario implements Serializable{
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public int getId() {
